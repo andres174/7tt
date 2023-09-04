@@ -1,0 +1,7 @@
+{
+  "name": "siete-toma-todo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
