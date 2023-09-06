@@ -7,6 +7,17 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  main_logo: string = '././assets/logo/logo.svg'
+
   constructor() {}
+
+  //TODO
+  /* 
+    Ver el tema de cuando carga o no la imagen
+  */
+
+  play(){
+    console.log("Jugar");
+  }
 
 }
