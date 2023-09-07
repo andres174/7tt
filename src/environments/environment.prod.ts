@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  logo: 'assets/logo/logo.svg'
 };

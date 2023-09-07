@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'game-mode',
+    loadChildren: () => import('./shared/game-mode/game-mode.module').then( m => m.GameModePageModule)
+  },
 ];
 
 @NgModule({

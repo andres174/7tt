@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -7,17 +9,17 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  main_logo: string = '././assets/logo/logo.svg'
+  main_logo: string = environment.logo
 
-  constructor() {}
-
+  constructor(
+    private router: Router
+  ) {}
   //TODO
   /* 
     Ver el tema de cuando carga o no la imagen
   */
-
   play(){
-    console.log("Jugar");
+    this.router.navigate(['game-mode'])
   }
 
 }

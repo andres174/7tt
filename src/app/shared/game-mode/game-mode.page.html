@@ -1,0 +1,43 @@
+<ion-content [fullscreen]="true">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" class="container_center mt_container_logo">
+        <div class="container_logo_sec">
+          <ion-img [src]="logo"></ion-img>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="container_center mt_container_logo">
+        <div class="container_main_txt">
+          Elige el modo de juego:
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="container_center">
+        <!-- Hacerlo con div xd -->
+        <div class="container_select container_center" (click)="select()" [ngStyle]="{'background': is_7tt_select ? '#ca1619' : '#fff'}">
+          7 toma todo
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="container_center">
+        <!-- hacerlo con div -->
+        <div class="container_select container_center" (click)="callFeedback()">
+          más juegos próximamente
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="container_center mt_btn">
+        <ion-button (click)="play()" expand="block" fill="clear" shape="round">
+          <div class="txt_btn">
+            jugar
+          </div>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

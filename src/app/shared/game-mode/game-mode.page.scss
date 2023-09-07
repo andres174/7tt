@@ -1,0 +1,40 @@
+.mt_container_logo {
+    margin-top: 2em;
+}
+.container_main_txt{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+ion-button {
+    --background: #fff;
+    --border-color: #ca1619;
+    --border-style: solid;
+    --border-width: 2px;
+    color: #000000;
+    width: 250px;
+    --color-activated: #ca1619;
+    --ripple-color: var(--color-activated);
+}
+.mt_btn{
+    margin-top: 2em;
+}
+.txt_btn{
+    font-weight: 700;
+    font-size: 25px;
+    padding: 5px;
+}
+.container_select {
+    width: 250px;
+    height: 42px;
+    border-color: #ca1619;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    cursor: pointer;
+
+    font-weight: 500;
+    font-size: 16px;
+
+    margin-top: 1.5em;
+}
