@@ -15,6 +15,14 @@ const routes: Routes = [
     path: 'game-mode',
     loadChildren: () => import('./shared/game-mode/game-mode.module').then( m => m.GameModePageModule)
   },
+  {
+    path: 'siete-toma-todo',
+    loadChildren: () => import('./games/siete-toma-todo/siete-toma-todo.module').then( m => m.SieteTomaTodoPageModule)
+  },
+  {
+    path: 'players',
+    loadChildren: () => import('./shared/players/players.module').then( m => m.PlayersPageModule)
+  },
 ];
 
 @NgModule({

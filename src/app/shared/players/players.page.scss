@@ -1,0 +1,41 @@
+.ft_sz_18 {
+    font-size: 19px !important;
+}
+ion-input{
+    --highlight-color-focused: #ca1619;
+    --background: #f5f5f5;
+    --border-radius: 5px;
+}
+.container_input{
+    width: 250px;
+}
+.btn_add{
+    width: 160px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2px;
+    border-color: #ca1619;
+    border-width: 2px;
+    border-style:ridge;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+.btn_add:active{
+    background-color: #ca1619;
+}
+.container_remove{
+    height: 56px;
+    width: 25px;
+}
+ion-button {
+    --background: #ca1619;
+    color: #000000;
+    width: 250px;
+}
+.txt_btn{
+    font-weight: 700;
+    font-size: 25px;
+    padding: 5px;
+}

@@ -23,7 +23,10 @@ export class GameModePage implements OnInit {
 
   play(){
     if(this.is_7tt_select){
-      this.router.navigate(['/home'])
+      this.router.navigate(['/players'])
+      setTimeout(() => {
+        this.is_7tt_select = false
+      }, 200)
     } else{
       this.noPlay()
     }

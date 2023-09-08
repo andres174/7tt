@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" class="container_center mt_container_logo">
+        <div class="container_logo_sec">
+          <ion-img [src]="logo"></ion-img>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="container_center mt_container_logo">
+        <div class="container_main_txt ft_sz_18">
+          Ingresa el nombre de los jugadores:
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="container_center">
+        <div class="btn_add" (click)="addPlayer()">
+          <span class="material-symbols-outlined">
+            add
+          </span>
+          <span class="txt_add">
+            agregar jugador
+          </span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <form [formGroup]="formPlayers">
+      <ion-row formArrayName="players">
+        <ion-col size="12" class="container_center" *ngFor="let p of players.controls; let i = index" [formGroupName]="i">
+          <div class="container_input">
+            <ion-input></ion-input>
+          </div>
+          <div class="container_remove container_center" (click)="removePlayer(i)">
+            <span class="material-symbols-outlined">
+              delete
+            </span>
+          </div>
+        </ion-col>
+      </ion-row>
+    </form>
+    <ion-row>
+      <ion-col size="12">
+        <div class="container_btn_save container_center">
+          <ion-button (click)="save()" expand="block" fill="clear" shape="round">
+            <div class="txt_btn">
+              jugar
+            </div>
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
