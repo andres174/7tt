@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-siete-toma-todo',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SieteTomaTodoPage implements OnInit {
 
-  constructor() { }
+  jugadores!: any[] 
+
+  constructor(
+    
+  ) {
+    this.jugadores = JSON.parse(localStorage.getItem('jugadores')!)
+  }
 
   ngOnInit() {
   }

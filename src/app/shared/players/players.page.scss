@@ -3,6 +3,7 @@
 }
 ion-input{
     --highlight-color-focused: #ca1619;
+    --highlight-color-valid: var(--highlight-color-focused);
     --background: #f5f5f5;
     --border-radius: 5px;
 }
@@ -28,6 +29,7 @@ ion-input{
 .container_remove{
     height: 56px;
     width: 25px;
+    //TODO arreglar la lista con el estilo y todo
 }
 ion-button {
     --background: #ca1619;
@@ -38,4 +40,19 @@ ion-button {
     font-weight: 700;
     font-size: 25px;
     padding: 5px;
+}
+.col_list{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.list_players{
+    height: 35px !important;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back_icon {
+    margin: 2rem;
 }

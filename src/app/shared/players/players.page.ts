@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { JugadoresService } from 'src/app/services/jugadores.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,44 +12,54 @@ import { environment } from 'src/environments/environment';
 export class PlayersPage implements OnInit {
 
   logo: string = environment.logo
-
-  formPlayers!: FormGroup
+  newPlayer: string = ''
+  jugadores!: any[];
+  is_jugadores: boolean = true
 
   constructor(
-    private formBuilder: FormBuilder
+    private jugadoresService: JugadoresService,
+    private router: Router
   ) {
-    this.buildForm()
-    this.addPlayer()
   }
 
   ngOnInit() {
-  }
-  buildForm(){
-    this.formPlayers = this.formBuilder.group({
-      players: this.formBuilder.array([])
-    });
-  }
-  get players(): FormArray{
-    return this.formPlayers.get('players') as FormArray
-  }
-  addPlayer(){
-    const playersGroup = this.formBuilder.group({
-      player: ['', Validators.required]
-    })
-    this.players.push(playersGroup)
-  }
-  removePlayer(i: number){
-    this.players.removeAt(i)
+    this.jugadores = this.jugadoresService.getJugadores();
   }
 
+  addPlayer(){
+    if (this.newPlayer.trim() !== '') {
+      this.jugadoresService.addJugador(this.newPlayer);
+      this.newPlayer = ''; // Limpia el campo de entrada después de agregar
+      this.jugadores = this.jugadoresService.getJugadores(); // Actualiza la lista de jugadores
+      this.is_jugadores = false
+    }
+  }
 
   save(){
-    console.log(this.formPlayers);
-    if(this.formPlayers.valid){
-      console.log("VALIDO MMV");
-    } else{
-      console.log("NO ES VALIDO MMV");
+    const j = JSON.stringify(this.jugadores)
+    localStorage.setItem('jugadores', j)
+    this.router.navigate(['/siete-toma-todo'])
+  }
+
+  /* editarJugador(id: number) {
+    //TODO
+    // Implementar la navegación a la página de edición (o modal)
+    // pasar el ID del jugador como parámetro si es necesario
+    // futura actualización
+  } */
+  
+  eliminarJugador(id: number) {
+    this.jugadoresService.deleteJugador(id);
+    this.jugadores = this.jugadoresService.getJugadores(); // Actualiza la lista de jugadores después de eliminar
+    if(this.jugadores.length === 0){
+      this.is_jugadores = true
     }
+  }
+
+  back(){
+    this.jugadores = []
+    this.is_jugadores = true
+    this.router.navigate(['/game-mode'])
   }
 
 }

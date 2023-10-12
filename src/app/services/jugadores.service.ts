@@ -31,4 +31,8 @@ export class JugadoresService {
     }
   }
 
+  deleteAll(){
+    this.jugadores = []
+  }
+
 }
