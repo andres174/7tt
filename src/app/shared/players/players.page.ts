@@ -36,6 +36,7 @@ export class PlayersPage implements OnInit {
   }
 
   save(){
+    localStorage.clear()
     const j = JSON.stringify(this.jugadores)
     localStorage.setItem('jugadores', j)
     this.router.navigate(['/siete-toma-todo'])
