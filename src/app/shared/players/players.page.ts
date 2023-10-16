@@ -27,6 +27,11 @@ export class PlayersPage implements OnInit {
     this.jugadores = this.jugadoresService.getJugadores();
   }
 
+  //TODO
+  /* 
+    Realizar pruebas cuando se regresa y todo 
+  */
+
   addPlayer(){
     if (this.newPlayer.trim() !== '') {
       this.jugadoresService.addJugador(this.newPlayer);

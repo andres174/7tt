@@ -10,4 +10,11 @@
       <ion-title size="large">siete-toma-todo</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div>
+    <h3>Jugador: {{ turno_act.jugador }}</h3>
+    <p>Carta: {{ turno_act.carta | json}}</p>
+  </div>
+  <ion-button (click)="prevTurn()" [disabled]="index_act === 0">Anterior</ion-button>
+  <ion-button (click)="nextTurn()" [disabled]="index_act === juego.length - 1">Siguiente</ion-button>
 </ion-content>

@@ -11,14 +11,12 @@ import { ShuffleService } from 'src/app/services/shuffle.service';
 export class SieteTomaTodoPage implements OnInit {
 
   jugadores!: any[]
-
   cartas = new Carta()
-
   baraja: any[] = this.cartas.baraja
-
-  /* cartasAsignadas: Record<string, any[]> = {}; */
-
   juego: any[] = []
+
+  index_act: number = 0
+  turno_act: any;
 
   constructor(
     private shuffleService: ShuffleService
@@ -29,7 +27,6 @@ export class SieteTomaTodoPage implements OnInit {
 
   ngOnInit() {
     this.initGame()
-    /* console.log(this.cartasAsignadas); */
   }
 
 
@@ -48,36 +45,24 @@ export class SieteTomaTodoPage implements OnInit {
     }
 
     console.log(this.juego);
-
     
-    
-    // const cartasAsignadas: Record<string, any[]> = {};
-
-    // // Inicializa un objeto para llevar un registro de las cartas asignadas a cada jugador
-    // usuarios.forEach((usuario) => (cartasAsignadas[usuario] = []));
-
-    // // Calcular cuántas cartas se asignarán a cada jugador
-    // const cartasPorJugador = Math.floor(this.baraja.length / usuarios.length);
-
-    // // Reinicializar el registro de cartas asignadas
-    // for (const usuario in cartasAsignadas) {
-    //   cartasAsignadas[usuario] = [];
-    // }
-
-    // // Asignar cartas a los jugadores
-    // for (let i = 0; i < this.baraja.length; i++) {
-    //   const usuario = usuarios[i % usuarios.length];
-    //   if (cartasAsignadas[usuario].length < cartasPorJugador) {
-    //     const cartaAsignada = this.baraja[i];
-    //     cartasAsignadas[usuario].push(cartaAsignada);
-    //   }
-    // }
-
-    // this.cartasAsignadas = cartasAsignadas
-
-    
+    this.turno_act = this.juego[this.index_act]
   }
 
+  nextTurn(){
+    if (this.index_act < this.juego.length - 1) {
+      this.index_act++;
+      this.turno_act = this.juego[this.index_act];
+    }
+  }
 
+  prevTurn(){
+    if (this.index_act > 0) {
+      this.index_act--;
+      this.turno_act = this.juego[this.index_act];
+    }
+  }
+
+  
 
 }
