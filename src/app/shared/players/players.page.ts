@@ -23,6 +23,7 @@ export class PlayersPage implements OnInit {
   }
 
   ngOnInit() {
+    localStorage.clear
     this.jugadores = this.jugadoresService.getJugadores();
   }
 
