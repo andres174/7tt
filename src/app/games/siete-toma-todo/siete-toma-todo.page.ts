@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { NavParams } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Carta } from 'src/app/class/carta';
 import { ShuffleService } from 'src/app/services/shuffle.service';
+import { CartasComponent } from 'src/app/shared/components/cartas/cartas.component';
 
 @Component({
   selector: 'app-siete-toma-todo',
@@ -17,12 +17,11 @@ export class SieteTomaTodoPage implements OnInit {
 
   index_act: number = 0
   turno_act: any;
-
+  
   constructor(
     private shuffleService: ShuffleService
   ) {
     this.jugadores = JSON.parse(localStorage.getItem('jugadores')!)
-
   }
 
   ngOnInit() {

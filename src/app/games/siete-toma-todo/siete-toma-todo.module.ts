@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { SieteTomaTodoPageRoutingModule } from './siete-toma-todo-routing.module';
 
 import { SieteTomaTodoPage } from './siete-toma-todo.page';
+import { ComponentsModule } from 'src/app/shared/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SieteTomaTodoPageRoutingModule
+    SieteTomaTodoPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [SieteTomaTodoPage]
 })

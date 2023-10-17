@@ -1,0 +1,22 @@
+<div class="main_card" [@cartaFade]="true">
+  <div class="container">
+    <div class="centro container_center">
+      <div class="txt_card">
+        {{ getValorAMostrar() }}
+      </div>
+    </div>
+    <div class="icon1 icon_tam" [ngClass]="{ 'p_red': esRoja(), 'p_black': !esRoja() }">
+      <ng-container *ngIf="carta.v_palo === 1">&#9829;</ng-container>
+      <ng-container *ngIf="carta.v_palo === 2">&#9830;</ng-container>
+      <ng-container *ngIf="carta.v_palo === 3">&#9827;</ng-container>
+      <ng-container *ngIf="carta.v_palo === 4">&#9824;</ng-container>
+    </div>
+    <div class="icon2 icon_tam" [ngClass]="{ 'p_red': esRoja(), 'p_black': !esRoja() }">
+      <ng-container *ngIf="carta.v_palo === 1">&#9829;</ng-container>
+      <ng-container *ngIf="carta.v_palo === 2">&#9830;</ng-container>
+      <ng-container *ngIf="carta.v_palo === 3">&#9827;</ng-container>
+      <ng-container *ngIf="carta.v_palo === 4">&#9824;</ng-container>
+    </div>
+  </div>
+
+</div>

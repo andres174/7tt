@@ -1,0 +1,68 @@
+div {
+    font-family: 'Kaisei Decol', serif;
+}
+
+.main_card {
+    background-color: #f8f8f8;
+    width: 14.7638rem;
+    height: 20.7874rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+
+}
+
+.carta-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.carta-leave {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "icon1 . . ."
+        ". centro centro ."
+        ". centro centro ."
+        ". centro centro ."
+        ". . . icon2";
+    width: 14.7638rem;
+    height: 20.7874rem;
+}
+
+.centro {
+    grid-area: centro;
+    text-align: center;
+    font-size: 6rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.icon1 {
+    grid-area: icon1;
+}
+
+.icon2 {
+    grid-area: icon2;
+}
+
+.icon_tam {
+    text-align: center;
+    font-size: 3.1rem;
+}
+
+.p_red {
+    color: red
+}
+
+.p_black {
+    color: black;
+}
