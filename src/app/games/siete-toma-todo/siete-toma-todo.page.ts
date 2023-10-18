@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Carta } from 'src/app/class/carta';
 import { ShuffleService } from 'src/app/services/shuffle.service';
-import { CartasComponent } from 'src/app/shared/components/cartas/cartas.component';
 
 @Component({
   selector: 'app-siete-toma-todo',
@@ -28,12 +27,10 @@ export class SieteTomaTodoPage implements OnInit {
     this.initGame()
   }
 
-
   initGame() {
     const usuarios = this.jugadores.map((jugador) => jugador.nombre);
-    console.log(usuarios);
+    
     this.baraja = this.shuffleService.shuffleArray(this.baraja);
-    console.log(this.baraja);
 
     let jugadorIndex = 0
 
@@ -42,9 +39,6 @@ export class SieteTomaTodoPage implements OnInit {
       this.juego.push({jugador, carta})
       jugadorIndex = (jugadorIndex + 1) % usuarios.length 
     }
-
-    console.log(this.juego);
-    
     this.turno_act = this.juego[this.index_act]
   }
 
