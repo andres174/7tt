@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router, RouterEvent } from '@angular/router';
 import { Carta } from 'src/app/class/carta';
 import { ShuffleService } from 'src/app/services/shuffle.service';
 
@@ -18,7 +19,8 @@ export class SieteTomaTodoPage implements OnInit {
   turno_act: any;
   
   constructor(
-    private shuffleService: ShuffleService
+    private shuffleService: ShuffleService,
+    private router: Router
   ) {
     this.jugadores = JSON.parse(localStorage.getItem('jugadores')!)
   }
@@ -54,6 +56,10 @@ export class SieteTomaTodoPage implements OnInit {
       this.index_act--;
       this.turno_act = this.juego[this.index_act];
     }
+  }
+  
+  back(){
+    this.router.navigate(['/game-mode'])
   }
 
   
