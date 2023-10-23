@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { GameModePageRoutingModule } from './game-mode-routing.module';
 
 import { GameModePage } from './game-mode.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GameModePageRoutingModule
+    GameModePageRoutingModule,
+    ComponentsModule
   ],
   declarations: [GameModePage]
 })

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PlayersPageRoutingModule } from './players-routing.module';
 
 import { PlayersPage } from './players.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { PlayersPage } from './players.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    PlayersPageRoutingModule
+    PlayersPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [PlayersPage]
 })
